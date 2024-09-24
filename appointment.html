@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ appointment is defined and 'Edit' or 'Schedule' }} Appointment</h2>
+
+<div class="appointment-form">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        
+        <!-- Pre-select patient -->
+        <p>
+            {{ form.patient_id.label }} 
+            {{ form.patient_id(class="form-control", value=appointment.patient_id if appointment else None) }}
+        </p>
+        
+        <!-- Pre-select doctor -->
+        <p>
+            {{ form.doctor_id.label }} 
+            {{ form.doctor_id(class="form-control", value=appointment.doctor_id if appointment else None) }}
+        </p>
+        
+        <!-- Pre-fill appointment date -->
+        <p>
+            {{ form.appointment_date.label }} 
+            <input type="date" id="appointment_date" name="appointment_date" class="form-control" value="{{ appointment.appointment_date if appointment else '' }}" required>
+        </p>
+
+        <!-- Submit button -->
+        <p>
+            {{ form.submit(class='submit-btn') }}
+        </p>
+    </form>
+</div>
+
+<!-- View Appointments Button -->
+<div style="text-align: center; margin-top: 20px;">
+    <a href="{{ url_for('view_appointments') }}" class="btn btn-secondary btn12">View Appointments</a>
+</div>
+
+{% endblock %}

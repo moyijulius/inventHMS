@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Hospital Management System</title>
+</head>
+<body>
+    <header>
+        <h1>Embu Level 5 Hospital</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('register_patient') }}">Register Patient</a>
+            <a href="{{ url_for('doctors') }}">Doctors</a>
+            <a href="{{ url_for('appointment') }}">Schedule Appointment</a>
+        </nav>
+    </header>
+ <!-- Flash message display section -->
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert {{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+   <!-- JavaScript to handle fade-out animation -->
+    <script>
+        window.onload = function() {
+            var alertBox = document.querySelector('.alert');
+            if (alertBox) {
+                // Slide in the alert message from the right
+                setTimeout(function() {
+                    alertBox.style.right = '10px';  // Show the message
+                }, 100);
+
+                // After 3 seconds, fade out and slide the message out of view
+                setTimeout(function() {
+                    alertBox.classList.add('fade-out');
+                }, 3000);  // Delay before fading out
+            }
+        };
+    </script>
+</body>
+</html>

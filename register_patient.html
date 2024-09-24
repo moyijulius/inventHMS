@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Register Patient</h2>
+
+<div class="form-container">
+    {% if success %}
+        <p class="success-message">{{ get_flashed_messages()[0] }}</p>
+        <a href="{{ url_for('patients') }}" class="btn-view-patients">View Registered Patients</a>
+    {% else %}
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <p>{{ form.name.label }} {{ form.name(size=32) }}</p>
+            <p>{{ form.age.label }} {{ form.age(size=32) }}</p>
+            <p>{{ form.contact.label }} {{ form.contact(size=32) }}</p>
+            <p>{{ form.address.label }} {{ form.address(size=64) }}</p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}
+
+ 

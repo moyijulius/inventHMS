@@ -1,0 +1,479 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background: #0056b3;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #0056b3;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="datetime-local"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form input[type="submit"] {
+    background: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background: #004494;
+}
+
+/* General Button Styles */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Button Colors */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Search Bar Styles */
+.search-container {
+    display: flex;
+    justify-content: flex-end; /* Align search bar to the right */
+    margin-bottom: 20px; /* Add margin below search bar */
+}
+
+#searchForm {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right:0;
+
+
+}
+
+#searchInput {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+}
+
+#searchForm .btn {
+    background-color: #28a745;
+    color: #fff;
+    padding:8px;
+    border-radius: 0 4px 4px 0; /* Rounded corners only on the right */
+}
+
+#searchForm .btn:hover {
+    background-color: #218838;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+thead th {
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Patients Table Styles */
+.patients-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.patients-table th,
+.patients-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.patients-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+.patients-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.patients-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Doctors Table Styles */
+.doctors-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.doctors-table th,
+.doctors-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.doctors-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+.doctors-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.doctors-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Button Styles */
+.btn-add-doctor {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-doctor:hover {
+    background-color: #0056b3;
+}
+
+/* Button to View Registered Patients */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.btn-view-patients {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-view-patients:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-view-patients:active {
+    background-color: #004494;
+    transform: translateY(0);
+}
+
+.btn-view-patients:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Success Message Styling */
+.success-message {
+    color: #28a745;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Flash messages styling */
+.flash-messages {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.alert {
+    position: relative;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.alert.error {
+    background-color: #f44336;
+    color: white;
+}
+
+.alert.fade-out {
+    opacity: 0;
+}
+
+/* Appointment Form Styles */
+.appointment-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #0056b3;
+    text-align: center;
+}
+
+.appointment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.appointment-form p {
+    margin-bottom: 15px;
+}
+
+.appointment-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.appointment-form input,
+.appointment-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.appointment-form input[type="submit"] {
+    background: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.appointment-form input[type="submit"]:hover {
+    background: #004494;
+}
+/* Existing styles */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin:0;
+}
+
+#searchInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px; /* Increase padding here */
+    margin-left: 10px; /* Add space between input and button */
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-button i {
+    font-size: 18px; /* Adjust the size of the icon if needed */
+}
+.search-container {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-top: 20px; /* Space from the top */
+    text-align: right; /* Align container to the right */
+}
+
+#searchInput {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px; /* Adjust width as needed */
+    margin-right: 5px; /* Space between input and button */
+}
+
+.btn1 {
+    background-color: green;
+    border: none;
+    float:right;
+margin-bottom:20px;
+    color: white;
+    padding: 15px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn1:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.center-button {
+    margin-top: 20px; /* Space above the button */
+    text-align: center; /* Center the button */
+}
+.btn12{
+padding:10px;
+background-color: green;
+color:white;
+
+
+}
+

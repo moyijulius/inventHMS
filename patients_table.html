@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients Table</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
+<body>
+   
+    <table class="patients-table">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{ patient.contact }}</td>
+                <td>{{ patient.address }}</td>
+                <td class="actions-column">
+                    <a href="{{ url_for('update_patient', id=patient.id) }}" class="btn btn-primary">Update</a>
+                    <button class="btn btn-danger" onclick="dischargePatient('{{ url_for('discharge_patient', id=patient.id) }}')">Discharge</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+    function dischargePatient(url) {
+        if (confirm("Are you sure you want to discharge this patient?")) {
+            window.location.href = url;
+        }
+    }
+    </script>
+</body>
+</html>

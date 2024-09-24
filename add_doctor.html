@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add New Doctor</h2>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.name.label }} {{ form.name(size=32) }}</p>
+    <p>{{ form.specialization.label }} {{ form.specialization(size=32) }}</p>
+    <p>{{ form.contact.label }} {{ form.contact(size=32) }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+<a  href="{{ url_for('doctors') }}" class="btn-add-doctor ">Available Doctors</a>
+
+{% endblock %}

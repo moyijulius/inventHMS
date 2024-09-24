@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Welcome to the Embu Level 5 Hospital</h2>
+
+    <!-- Search bar for patients by ID -->
+    <div class="search-container" style="margin-top: 20px; text-align: right;">
+        <form id="searchForm" style="display: flex; align-items: center;">
+            <input type="text" id="searchInput" placeholder="Search by Patient ID" />
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </div>
+
+    <!-- Centered Button to View Registered Patients -->
+    <div class="center-button" style="margin-top: 20px; text-align: center;">
+        <button id="viewPatientsBtn" class="btn1">View Registered Patients</button>
+    </div>
+
+    <!-- Placeholder for dynamic content -->
+    <div id="patientsList"></div>
+
+    <script>
+        // Fetch and display all patients when the "View Registered Patients" button is clicked
+        document.getElementById('viewPatientsBtn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default action
+
+            fetch('{{ url_for("get_patients") }}')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('patientsList').innerHTML = data; // Insert table data
+                })
+                .catch(error => console.error('Error fetching patients list:', error));
+        });
+
+        // Handle search by patient ID
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const searchID = document.getElementById('searchInput').value;
+
+            if (searchID) {
+                fetch('{{ url_for("search_patient") }}?id=' + searchID)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('patientsList').innerHTML = data; // Insert search results
+                    })
+                    .catch(error => console.error('Error searching patient:', error));
+            }
+        });
+    </script>
+{% endblock %}
